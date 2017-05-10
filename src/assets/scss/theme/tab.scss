@@ -1,0 +1,29 @@
+$tab-header-height: px2rem(80px);
+.tab-box{
+    position: relative;
+    .tab-header{
+        width: 100%;
+        height: $tab-header-height;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        background: #fff;
+        .tab-item{
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            height: $tab-header-height;
+            line-height: $tab-header-height;
+            border-bottom: px2rem(2px) solid $color-border-default;
+            text-align: center;
+            color: #666;
+            font-size: px2rem(map_get($map-font-size, m));
+            &.active{
+                border-bottom: px2rem(2px) solid $color-primary;
+                color: $color-primary;
+            }
+        }
+    }
+}

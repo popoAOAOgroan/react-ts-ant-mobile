@@ -1,0 +1,194 @@
+$input-height: 80px;
+select{
+    -webkit-appearance:none;
+    outline: none; 
+    border: none;
+    background: transparent;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    height: px2rem($input-height);
+    border: none;
+    background: none;
+    color: $color-font-6;
+    font-size: px2rem(map_get($map-font-size, m));
+    @include px2rem(padding, 0 $padding-s 0 $padding-s);
+    -webkit-appearance: none;
+    appearance: none;
+    text-shadow: none;
+    //超出input输入部分隐藏
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &::-moz-placeholder {
+        color: $color-font-placeholder !important;
+        font-size: px2rem(map_get($map-font-size, m));
+        vertical-align: middle;
+    }
+    &:-ms-input-placeholder {
+        color: $color-font-placeholder !important;
+        font-size: px2rem(map_get($map-font-size, m));
+        vertical-align: middle;
+    }
+    // Internet Explorer 10+
+    &::-webkit-input-placeholder {
+        color: $color-font-placeholder !important;
+        font-size: px2rem(map_get($map-font-size, m));
+        vertical-align: middle;
+    }
+    &:focus {
+        //border-bottom: 1px solid $brand-default;
+        //box-shadow: 0 0 4px $brand-default;
+    }
+
+    //for width
+    &.half {
+        width: 50%;
+    }
+    &.quarter {
+        width: 25%;
+    }
+    &.success {
+        border: 1px solid $brand-success;
+        &:focus {
+            box-shadow: 0 0 4px $brand-success;
+        }
+    }
+    &.danger {
+        border: 1px solid $brand-danger;
+        &:focus {
+            box-shadow: 0 0 4px $brand-danger;
+        }
+    }
+    &.warning {
+        // border: 1px solid $brand-warning;
+        color: #000;//$brand-warning;
+        // text-shadow: #464545 1px 1px 3px;
+        &:focus {
+            // box-shadow: 0 0 4px $brand-warning;
+            color: #000;//$brand-warning;
+            // text-shadow: #464545 1px 1px 3px;
+        }
+    }
+    &[readonly] {
+        border: 1px solid #f6f6f6;
+        cursor: no-drop;
+        border: none;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.check-radio-inline {
+    height: $input-height;
+    line-height: $input-height;
+    .item {
+        display: inline-block;
+        line-height: inherit;
+        padding-right: px2rem($padding-s);
+    }
+    label {
+        font-size: px2rem(map_get($map-font-size, m));
+        line-height: inherit;
+    }
+}
+
+input[type=checkbox],
+input[type=radio]{
+    width: px2rem(map_get($map-font-size, m));
+    height: px2rem(map_get($map-font-size, m));
+}
+
+.form__input-err-tips{
+    color: $color-font-err;
+    font-size: px2rem(map_get($map-font-size, s));
+    position: relative;
+    top: px2rem(-26px);
+    height: px2rem(30px);
+    line-height: px2rem(30px);
+    @include px2rem(padding, 0 $padding-s 0 $padding-s);
+}
+.form__input-container{
+    height: px2rem($input-height);
+    // padding-top: px2rem(40px);
+}
+// .form__input-container .form__input-container--err{
+//     border-bottom: $color-font-err solid 1px;
+// }
+.form__icon-radio,.form__icon-radio--selected{
+    $select-wh: 40px;
+    display: inline-block;
+    width: px2rem($select-wh);
+    height: px2rem($select-wh);
+    border-radius: px2rem($select-wh/2);
+    border: px2rem(2px) solid $color-primary;
+    float: left;
+    margin-top: px2rem(20px);
+}
+.form__icon-radio--selected{
+    background: $color-primary
+}
+.userinfo__DB-tips{
+    font-size: px2rem(map_get($map-font-size, m));
+    height: px2rem(80px);
+    line-height: px2rem(86px);
+    padding: 0 px2rem($padding-m) 0 px2rem($padding-l + 20);
+    width: 100%;
+}
+.userinfo__DB-loading{
+    background: url('/doctor/static/149008503544574.gif') no-repeat center;
+    display: inline-block;
+    width: px2rem(30px);
+    height: px2rem(80px);
+    float: left;
+    margin-right: px2rem($padding-s);
+}
+.userinfo__DB-selected--false{
+    $select-wh: 40px;
+    display: inline-block;
+    width: px2rem($select-wh);
+    height: px2rem($select-wh);
+    border-radius: px2rem($select-wh/2);
+    border: px2rem(2px) solid #5ebfb8;
+    float: right;
+    margin-top: px2rem(20px);
+}
+.form__i-arrow{
+    width: 10%;
+    text-align: center;
+    font-size: px2rem(map_get($map-font-size, m));
+    background: url('/doctor/static/149008613155221.png') no-repeat center;
+    background-size: px2rem(15px);
+}
+
+.form__radio{
+    display: inline-block;
+    &:after{
+        clear: both;
+    }
+}
+
+.form__radio-box{
+    display: inline-block;
+    padding: 0 px2rem($padding-s);
+    font-size: px2rem(map_get($map-font-size, m));
+    color: $color-font-9;
+    input[type=radio]{
+        display: none;
+    }
+    >label{
+        padding: 0 px2rem($padding-l) 0 0;
+    }
+    &.form__radio-box--selected{
+        color: $color-font-3;
+    }
+}
+.form__textarea-container{
+    width: 100%;
+    height: 2rem;
+}

@@ -1,0 +1,149 @@
+$cell-box-height: 100px;
+$cell-height: 80px;
+$cell-title-height: 80px;
+$xs-cell-height: 40px;
+$double-cell-height: 176px;
+.cell-group{
+    width: 100%;
+    @include px2px(border-width, 1px 0 1px 0);
+    border-style: solid;
+    border-color: $color-border-default;
+    padding-left: px2rem($padding-l);
+    // padding-right: px2rem($padding-l);
+    margin-bottom: px2rem($padding-s);
+    background: #fff;
+    &.border-none{
+        border: none;
+    }
+    &.border-radius{
+        border-radius: px2rem(6px);
+    }
+    &.border-top-none{
+        @include px2px(border-width, 0 0 1px 0);
+    }
+    &.border-bottom-none{
+        @include px2px(border-width, 1px 0 0 0);
+    }
+    &.margin-none{
+        margin-bottom: 0;
+    }
+    &.no-background{
+        background: none;
+    }
+    &.no-padding{
+        padding: 0px;
+    }
+    .cell{
+        &.cell-title{
+            height: px2rem($cell-title-height);
+            .left-box{
+                height: px2rem($cell-title-height);
+                line-height: px2rem($cell-title-height);
+            }
+            .label{
+                height: px2rem($cell-title-height);
+                line-height: px2rem($cell-title-height);
+            }
+        }
+        .lable{
+            width: 30%;
+            min-width: px2rem(110px);
+            font-size: px2rem(map_get($map-font-size, l));
+            >span{
+                color: #333;
+            }
+        }
+        .lable--necessary{
+            >span{
+                &:after{
+                    content: '*';
+                    color: $color-font-err;
+                }
+            }
+        }
+        width: 100%;
+        height: px2rem($cell-box-height);
+        @include px2rem(padding, ($cell-box-height - $cell-height)/2 0 ($cell-box-height - $cell-height)/2 0);
+        line-height: px2rem($cell-height);
+        @include px2px(border-bottom, 1px solid $color-border-default);
+        display: box;              /* OLD - Android 4.4- */
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        &.height-auto{
+            height: auto;
+            min-height: px2rem($cell-height);
+        }
+        &.no-padding{
+            padding: 0px;
+        }
+        &:last-child{
+            border-bottom: none;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="email"]{
+
+        }
+        textarea{
+            border: 0px;
+            width: 100%;
+            min-height: 2rem;
+            font-size: px2rem(map_get($map-font-size, s));
+            // line-height: px2rem(20px);
+        }
+        .radio,
+        .radio-inline{
+        }
+        &.input-padding{
+            //padding: px2rem($padding-m) 0px;
+        }
+    }
+    .cell.double-line{
+        height: px2rem($double-cell-height);
+        line-height: px2rem($double-cell-height);
+    }
+    .left-box {
+        max-width: px2rem(200px);
+        height: 100%;
+        overflow: hidden;
+        &.clearly-width{
+            width: px2rem(150px);
+        }
+    }
+    .middle-box {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        padding: 0 px2rem($padding-m) 0 px2rem($padding-m);
+    }
+    .right-box {
+        max-width: px2rem(200px);
+        min-width: px2rem(40px);
+        padding-right: px2rem($padding-l);
+        height: 100%;
+    }
+    .label{
+        font-size: px2rem(map_get($map-font-size, m));
+        color: $color-font-3;
+        line-height: inherit;
+    }
+    .content{
+        font-size: px2rem(map_get($map-font-size, m));
+        color: $color-font-6;
+        line-height: inherit;
+        span{
+            color: $color-font-6;
+            font-size: px2rem(map_get($map-font-size, m));
+        }
+    }
+}

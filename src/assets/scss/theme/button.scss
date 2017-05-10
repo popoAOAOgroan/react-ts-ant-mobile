@@ -1,0 +1,147 @@
+$btn-height: 80px;
+$btn-height-fixed: 100px;
+$btn-disabled-bg: #d6d6d6;
+$btn-disabled-color: rgba(0,0,0,.4);
+$btn-radius: 6px;
+.btn{
+    display: block;
+    width: 100%;
+    height: px2rem($btn-height);
+    line-height: px2rem($btn-height);
+    border-radius: px2rem(6px);
+    text-align: center;
+    font-size: px2rem(map_get($map-font-size, l));
+    border: none;
+    background: none;
+    @include px2rem(padding, 0 $padding-m 0 $padding-m);
+    &.btn-small{
+        height: px2rem($btn-height * 0.8);
+        line-height: px2rem($btn-height * 0.8);
+        font-size: px2rem(map_get($map-font-size, m)) * 0.8;
+        &.in-cell{
+            margin-top: px2rem($btn-height * 0.1 + 2px);
+        }
+    }
+    &.btn-xsmall{
+        height: px2rem($btn-height * 0.6);
+        line-height: px2rem($btn-height * 0.6);
+        font-size: px2rem(map_get($map-font-size, m)) * 0.6;
+        &.in-cell{
+            margin-top: px2rem($btn-height * 0.2);
+        }
+    }
+    &.no-border-radius{
+        border-radius: 0px;
+    }
+    &.fixed{
+        border-radius: 0px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: px2rem($btn-height-fixed);
+    }
+    &.hide{
+        visibility: hidden;
+    }
+}
+.btn-primary{
+    color: #ffffff;
+    background: $color-primary-red;
+    &:active,
+    &.active{
+        background: darken($color-primary-red, 5%);
+    }
+    &:disabled,
+    &.disabled{
+        background: $btn-disabled-bg;
+        color: $btn-disabled-color;
+    }
+}
+.btn-warning{
+    color: #ffffff;
+    background: $brand-warning;
+    &:active,
+    &.active{
+        background: darken($brand-warning, 5%);
+    }
+    &:disabled,
+    &.disabled{
+        background: $btn-disabled-bg;
+        color: $btn-disabled-color;
+    }
+}
+.btn-danger{
+    color: #ffffff;
+    background: $brand-danger;
+    &:active,
+    &.active{
+        background: darken($brand-danger, 5%);
+    }
+    &:disabled,
+    &.disabled{
+        background: $btn-disabled-bg;
+        color: $btn-disabled-color;
+    }
+}
+.btn-success{
+     color: #ffffff;
+     background: $brand-success;
+     &:active,
+     &.active{
+         background: darken($brand-success, 5%);
+     }
+     &:disabled,
+     &.disabled{
+         background: $btn-disabled-bg;
+         color: $btn-disabled-color;
+     }
+ }
+.btn-info{
+    color: #ffffff;
+    background: $brand-info;
+    &:active,
+    &.active{
+        background: darken($brand-info, 5%);
+    }
+    &:disabled,
+    &.disabled{
+        background: $btn-disabled-bg;
+        color: $btn-disabled-color;
+    }
+}
+.btn-minor{
+    color: $color-font-3;
+    background: #ffffff;
+    // @include px2px(border, 1px solid $color-border-default);
+    &:active,
+    &.active{
+        background: #dddddd;
+    }
+    &:disabled,
+    &.disabled{
+        background: $btn-disabled-bg;
+        color: $btn-disabled-color;
+    }
+}
+
+.btn-dock{
+    width: 100%;
+    @include px2rem(padding, $padding-s $padding-m $padding-s $padding-m);
+    display: inline-block;
+    .left-dock{
+        width: 50%;
+        padding-right: px2rem($padding-s);
+        float: left;
+    }
+    .right-dock{
+        width: 50%;
+        padding-left: px2rem($padding-s);
+        float: left;
+    }
+    &.fixed{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+}

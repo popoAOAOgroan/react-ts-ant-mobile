@@ -1,0 +1,6 @@
+FROM nginx:stable-alpine
+MAINTAINER Yuanhai He <i@bestmike007.com>
+
+COPY /srv/source/dist /usr/share/nginx/html/doctor
+
+RUN sed -i '/access_log/c \    access_log \/dev\/null;server_tokens off;' /etc/nginx/nginx.conf

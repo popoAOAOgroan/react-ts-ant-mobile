@@ -1,0 +1,12 @@
+FROM node:alpine
+MAINTAINER Yuanhai He <i@bestmike007.com>
+
+COPY . /srv/source
+
+RUN cd /srv/source && \
+    wget -qO - http://git.oschina.net/bestmike007/files/raw/master/setenv.sh | sh -s; \
+    apk add --no-cache python make && \
+    echo "Installing dependencies... `date`" && \
+    yarn install && \
+    echo "Starting dist build... `date`" && \
+    NODE_ENV=test node build/test.js

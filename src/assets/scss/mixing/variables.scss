@@ -1,0 +1,56 @@
+//主色
+$color-primary: #5ebfb8;
+$color-primary-red: #db525a;
+$color-minor-red: #ee7f79;
+
+//辅助色
+$color-main-bg: #f7f7f7;
+$color-main-bg-dark: #f2f2f2;
+$color-border-default: #d7d7d7;
+$color-border-light: #e7e7e7;
+
+//功能色系
+$brand-primary: $color-primary;
+$brand-success: #0b8c1f;
+$brand-default: #a6ebff;
+$brand-info: #009ddb;
+$brand-warning: #f07415;
+$brand-danger: #db525a;
+$brand-link: #036eb8;
+
+//字体色系
+$color-font-3: #333;
+$color-font-5: #555;
+$color-font-6: #666;
+$color-font-8: #888;
+$color-font-9: #999;
+$color-font-placeholder: #b4b5b5;
+$color-font-link: #036eb8;
+$color-font-err: #e9545d;
+
+$color-icon: #ed7f7a;
+
+//边距系统
+$padding-s: 10px;
+$padding-m: 20px;
+$padding-l: 30px;
+
+//字体大小
+$map-font-size: (xxs: 22px, xs: 24px, s: 26px, m: 28px, l:32px, xl:36px);
+
+//z-index使用
+$z-index-bg:1;
+$z-index-content: 10;
+$z-index-framework: 20;
+$z-index-os: 30;
+$z-index-modal: 40;
+
+//dialog
+$dialog-bg-color:rgb(243,245,245); /* alert,confirm bg color*/
+$toast-body-width: 500px;
+$toast-body-height: 100px;
+$dialog-body-width: 500px;
+$dialog-radius: 8px;
+
+/*header*/
+$header-height: 88px;
