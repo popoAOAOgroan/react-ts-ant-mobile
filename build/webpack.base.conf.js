@@ -32,11 +32,18 @@ module.exports = {
         path: path.join(commonPath.dist, 'static'),
         publicPath: deployServicePath + '/static/'
     },
+    devtool: "source-map",
+    // externals: {
+    //     "react": "React",
+    //     "react-dom": "ReactDOM"
+    // },
     resolve: {
         // ant config
-        modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
+        // modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
         // ant config
-        extensions: ['', '.web.js', '.tsx', '.tx', '.js', '.json', '.jsx'],
+        // extensions: ['', '.ts', '.tsx', '.js', '.json', '.jsx'],
+
+        extensions: ["", ".ts", ".tsx", ".js", ".jsx", ".json"],
         alias: {
             // ================================
             // 自定义路径别名
@@ -60,7 +67,19 @@ module.exports = {
         root: path.join(rootPath, 'node_modules')
     },
     module: {
-        loaders: [{
+        loaders: [
+        // { 
+        //     test: /\.tsx?$/, 
+        //     loaders: ['babel-loader', 'ts-loader'], 
+        //     include: src
+        // }, 
+
+        // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+        { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+
+        // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+        { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+        {
             test: /\.(js|jsx)$/,
             loaders: (function () {
                 var _loaders = ['babel?' + JSON.stringify({

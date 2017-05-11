@@ -34,7 +34,7 @@ export default {
     getComponent(nextState, cb) {
       require.ensure([], (require) => {
 
-        cb(null, require('COMPONENT/profile/').default);
+        cb(null, require('COMPONENT/screen/ProfileScreen.js').default);
 
       }, 'bd_center');
     }
@@ -43,7 +43,7 @@ export default {
 
 
   childRoutes: [
-    require('./doc').default,
+    // require('./doc').default,
     
     // 强制“刷新”页面的 hack
     {
