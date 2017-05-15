@@ -208,3 +208,15 @@ a {
     font-size: 16px;
     color: #9da3a9;
 }
+
+.iconfont{
+    color: $color-font-9;
+    font-size: px2rem(map_get($map-font-size, l));
+}
+
+.bottom-border{
+    border-bottom: px2rem($padding-m) solid #f3f5f5;
+}
+.top-border{
+    top-bottom: px2rem($padding-m) solid #f3f5f5;
+}

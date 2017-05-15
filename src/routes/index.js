@@ -44,6 +44,8 @@ export default {
 
   childRoutes: [
     // require('./doc').default,
+    require('./team').default,
+    require('./doctor').default,
     
     // 强制“刷新”页面的 hack
     {

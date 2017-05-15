@@ -1,0 +1,8 @@
+@import "../mixing/fn.scss";
+@import "../mixing/variables.scss";
+.doctor-list-screen__list{
+	background: $color-main-bg;
+	.doctor-cell-box{
+		margin: 0 0 px2rem($padding-m) 0;
+	}
+}

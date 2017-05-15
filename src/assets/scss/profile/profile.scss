@@ -1,0 +1,45 @@
+@import "../mixing/fn.scss";
+@import "../mixing/variables.scss";
+.profile__box--bg{
+	background: url('/static/14903233549077.png') center;
+	background-size: cover;
+	padding: px2rem($padding-l);
+	h3, p, span{
+		color: #fff;
+	}
+	>div{
+		float: left;
+	}
+	&:after{
+		clear: both;
+		display: block;
+		content: '';
+	}
+}
+.profile__user-avatar{
+	background: url($user-avatar) center;
+	background-size: cover;
+	display: inline-block;
+	width: px2rem(150px);
+	height: px2rem(150px);
+}
+.profile__user-info{
+	padding: px2rem($padding-l) px2rem($padding-m);
+	>h3{
+		padding: 0 0 px2rem($padding-s) 0;
+		font-size: px2rem(map_get($map-font-size, l));
+	}
+	>p span{
+		font-size: px2rem(map_get($map-font-size, m));
+		padding: 0 px2rem($padding-m) 0 0;
+	}
+}
+.profile__cell-group{
+	.iconfont{
+		padding: 0 px2rem($padding-m) 0 0;
+	}
+	.cell{
+		color: $color-font-6;
+		font-size: px2rem(map_get($map-font-size, l));
+	}
+}

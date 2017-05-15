@@ -1,0 +1,8 @@
+@import "../mixing/fn.scss";
+@import "../mixing/variables.scss";
+.team-screen__list{
+	background: $color-main-bg;
+	.team__cell{
+		margin-bottom: px2rem($padding-m);
+	}
+}

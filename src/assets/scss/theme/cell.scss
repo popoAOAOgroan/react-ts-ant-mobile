@@ -1,5 +1,5 @@
 $cell-box-height: 100px;
-$cell-height: 80px;
+$cell-height: 100px;
 $cell-title-height: 80px;
 $xs-cell-height: 40px;
 $double-cell-height: 176px;
@@ -61,17 +61,21 @@ $double-cell-height: 176px;
                 }
             }
         }
+        .myzd-bd-arrow-right{
+            float: right;
+        }
         width: 100%;
         height: px2rem($cell-box-height);
         @include px2rem(padding, ($cell-box-height - $cell-height)/2 0 ($cell-box-height - $cell-height)/2 0);
         line-height: px2rem($cell-height);
         @include px2px(border-bottom, 1px solid $color-border-default);
-        display: box;              /* OLD - Android 4.4- */
-        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-        display: -ms-flexbox;      /* TWEENER - IE 10 */
-        display: -webkit-flex;     /* NEW - Chrome */
-        display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        // display: box;              /* OLD - Android 4.4- */
+        // display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        // display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        // display: -ms-flexbox;      /* TWEENER - IE 10 */
+        // display: -webkit-flex;     /* NEW - Chrome */
+        // display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        // 为了自由布局
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         flex-direction: row;

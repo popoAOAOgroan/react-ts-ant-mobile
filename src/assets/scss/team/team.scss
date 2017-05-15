@@ -1,0 +1,52 @@
+@import "../mixing/fn.scss";
+@import "../mixing/variables.scss";
+.team__cell{
+	background: #fff;
+}
+.team__user-avatar{
+	$avatar-wh: 100px;
+	background: url($user-avatar) center;
+	background-size: cover;
+	display: inline-block;
+	width: px2rem($avatar-wh);
+	height: px2rem($avatar-wh);
+	border: 1px $color-border-default solid;
+	border-radius: $avatar-wh/2;
+}
+.team__user-profile{
+	width: 25%;
+	text-align: center;
+	padding: px2rem($padding-m) 0 0 0;
+	>h3{
+		font-size: px2rem(map_get($map-font-size, l));
+		line-height: px2rem(50px);
+	}
+}
+.team__cell-top{
+	&:after{
+		clear: both;
+		content: '';
+		display: block;
+	}
+	>div{
+		float: left;
+	}
+	.team__cell-group{
+		width: 75%;
+	}
+	border-bottom: 1px solid #ddd;
+}
+.team__cell-group{
+	color: $color-font-6;
+	font-size: px2rem(map_get($map-font-size, m));
+}
+.team__highlight{
+	color: $color-minor-red;
+}
+.team__graylight{
+	color: $color-font-9;
+}
+.team__cell-right, .myzd-bd-arrow-right{
+	float: right;
+	margin-right: px2rem($padding-m);
+}
